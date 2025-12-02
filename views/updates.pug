@@ -1,0 +1,28 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title= title
+    link(rel='stylesheet' href='/css/style.css')
+  body
+    div.container
+      h1 📖 Add New Book
+      
+      div.action-bar
+        a.btn-secondary(href='/') ⬅ Return to the homepage
+      
+      form.book-form(method='POST' action='/update-cobj')
+        div.form-group
+          label(for='book_name') Book Name *
+          input(type='text' id='book_name' name='book_name' placeholder='Enter the book name' required)
+
+        div.form-group
+          label(for='author') Author *
+          input(type='text' id='author' name='author' placeholder='Enter the author name' required)
+
+        div.form-group
+          label(for='unit_price') Unit Price *
+          input(type='number' step='0.01' id='unit_price' name='unit_price' placeholder='Enter the unit price' required)
+
+        button.btn-submit(type='submit') 📚 Add Book to Library

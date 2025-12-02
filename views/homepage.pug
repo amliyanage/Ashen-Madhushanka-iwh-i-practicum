@@ -1,0 +1,32 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title= title
+    link(rel='stylesheet' href='/css/style.css')
+  body
+    div.container
+      h1 📚 Books Library
+      
+      div.action-bar
+        a.btn(href='/update-cobj') ➕ Add to this table
+      
+      if books && books.length > 0
+        table.books-table
+          thead
+            tr
+              th Book Name
+              th Author
+              th Unit Price
+          tbody
+            each book in books
+              tr
+                td= book.properties.book_name || 'N/A'
+                td= book.properties.author || 'N/A'
+                td= book.properties.unit_price || 'N/A'
+      else
+        p.no-data No books found. Add your first book!
+      
+      footer
+        p HubSpot Integration Practicum - Books Custom Object
